@@ -15,14 +15,14 @@ describe('<TodoListItem />', () => {
   it('Default render', () => {
     const wrapper = shallow(<TodoListItem {...testItem} />)
     expect(wrapper.find('.title').text()).toEqual(testItem.title)
-    expect(wrapper.find('.btn-to-done').length).toBe(1)
-    expect(wrapper.find('.btn-to-active').length).toBe(0)
+    expect(wrapper.find('.btn-to-done')).toHaveLength(1)
+    expect(wrapper.find('.btn-to-active')).toHaveLength(0)
   })
 
   it('Render item with isCompleted: true ', () => {
     testItem.isCompleted = true
     const wrapper = shallow(<TodoListItem {...testItem} />)
-    expect(wrapper.find('.btn-to-done').length).toBe(0)
-    expect(wrapper.find('.btn-to-active').length).toBe(1)
+    expect(wrapper.find('.btn-to-done')).toHaveLength(0)
+    expect(wrapper.find('.btn-to-active')).toHaveLength(1)
   })
 })
