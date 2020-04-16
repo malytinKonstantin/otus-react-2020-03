@@ -13,7 +13,7 @@ interface TodoListItemProps extends TodoListItem {
 }
 
 export const TodoListItem: React.FC<Props> = (props) => {
-  const { title, description, isCompleted, onDone, onActive, onRemove } = props
+  const { title, isCompleted, onDone, onActive, onRemove } = props
 
   return (
     <div>
