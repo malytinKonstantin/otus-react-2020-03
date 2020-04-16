@@ -1,0 +1,48 @@
+import React, { useState, useCallback } from 'react'
+import type { TodoListItem } from '../TodoListItem'
+
+interface TodoListCreateItemProps {
+  /*
+   * callback from parent for submit created item
+   */
+  onCreate: (listItem: TodoListItem) => void
+}
+
+interface TodoListCreateItemState {
+  title: string
+}
+
+export const TodoListCreateItem: React.FC<
+  TodoListCreateItemProps,
+  TodoListCreateItemState
+> = (props) => {
+  const [title, setTitle] = useState('')
+
+  const { onCreate } = props
+
+  const handleChangeTitle = (e) => setTitle(e.target.value)
+
+  const reset = useCallback(() => setTitle(''), [])
+
+  const create = () => {
+    const item = {
+      id: Math.random(),
+      title,
+      isCompleted: false,
+    }
+    onCreate(item)
+    reset()
+  }
+
+  return (
+    <div>
+      <input type="text" value={title} onChange={handleChangeTitle} />
+      <button className="btn-reset" onClick={reset}>
+        сброс
+      </button>
+      <button className="btn-add" onClick={create}>
+        добавить
+      </button>
+    </div>
+  )
+}
