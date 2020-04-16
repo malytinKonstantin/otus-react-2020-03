@@ -20,11 +20,17 @@ export const TodoListItem: React.FC<Props> = (props) => {
       <div className="title">{title}</div>
       <div className="nav">
         {isCompleted ? (
-          <button onClick={onActive}>взять в работу</button>
+          <button className="btn-to-active" onClick={onActive}>
+            взять в работу
+          </button>
         ) : (
-          <button onClick={onDone}>выполнено</button>
+          <button className="btn-to-done" onClick={onDone}>
+            выполнено
+          </button>
         )}
-        <button onClick={onRemove}>удалить</button>
+        <button className="btn-remove" onClick={onRemove}>
+          удалить
+        </button>
       </div>
     </div>
   )
