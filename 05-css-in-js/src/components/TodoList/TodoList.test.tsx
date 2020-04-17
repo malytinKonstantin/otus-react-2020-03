@@ -1,8 +1,14 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
+import renderer from 'react-test-renderer'
+
 import { TodoList } from './TodoList'
-import { TodoListItem } from './components/TodoListItem'
-import { TodoListCreateItem } from './components/TodoListCreateItem'
+import {
+  TodoListItem,
+  TodoListCreateItem,
+  ButtonToDone,
+  ButtonToActive,
+} from './components'
 
 describe('<TodoList />', () => {
   const todoList = [
@@ -15,6 +21,12 @@ describe('<TodoList />', () => {
   ]
 
   const wrapper = mount(<TodoList list={todoList} />)
+
+  it('renders snapshot', () => {
+    expect(
+      renderer.create(<TodoList list={todoList} />).toJSON(),
+    ).toMatchSnapshot()
+  })
 
   it('Default render', () => {
     expect(wrapper.find(TodoListCreateItem)).toHaveLength(1)
@@ -33,18 +45,18 @@ describe('<TodoList />', () => {
   })
 
   it('Complete task item', () => {
-    expect(wrapper.find(TodoListItem).find('.btn-to-active')).toHaveLength(0)
-    expect(wrapper.find(TodoListItem).find('.btn-to-done')).toHaveLength(1)
-    wrapper.find(TodoListItem).find('.btn-to-done').simulate('click')
-    expect(wrapper.find(TodoListItem).find('.btn-to-active')).toHaveLength(1)
-    expect(wrapper.find(TodoListItem).find('.btn-to-done')).toHaveLength(0)
+    expect(wrapper.find(TodoListItem).find(ButtonToActive)).toHaveLength(0)
+    expect(wrapper.find(TodoListItem).find(ButtonToDone)).toHaveLength(1)
+    wrapper.find(TodoListItem).find(ButtonToDone).simulate('click')
+    expect(wrapper.find(TodoListItem).find(ButtonToActive)).toHaveLength(1)
+    expect(wrapper.find(TodoListItem).find(ButtonToDone)).toHaveLength(0)
   })
 
   it('To active task item', () => {
-    expect(wrapper.find(TodoListItem).find('.btn-to-active')).toHaveLength(1)
-    expect(wrapper.find(TodoListItem).find('.btn-to-done')).toHaveLength(0)
-    wrapper.find(TodoListItem).find('.btn-to-active').simulate('click')
-    expect(wrapper.find(TodoListItem).find('.btn-to-active')).toHaveLength(0)
-    expect(wrapper.find(TodoListItem).find('.btn-to-done')).toHaveLength(1)
+    expect(wrapper.find(TodoListItem).find(ButtonToActive)).toHaveLength(1)
+    expect(wrapper.find(TodoListItem).find(ButtonToDone)).toHaveLength(0)
+    wrapper.find(TodoListItem).find(ButtonToActive).simulate('click')
+    expect(wrapper.find(TodoListItem).find(ButtonToActive)).toHaveLength(0)
+    expect(wrapper.find(TodoListItem).find(ButtonToDone)).toHaveLength(1)
   })
 })

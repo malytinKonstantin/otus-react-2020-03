@@ -1,5 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import renderer from 'react-test-renderer'
+
+import { Title, ButtonToActive, ButtonToDone } from './styles'
 import { TodoListItem } from './TodoListItem'
 
 describe('<TodoListItem />', () => {
@@ -12,17 +15,23 @@ describe('<TodoListItem />', () => {
     onRemove: jest.fn,
   }
 
+  it('renders snapshot', () => {
+    expect(
+      renderer.create(<TodoListItem {...testItem} />).toJSON(),
+    ).toMatchSnapshot()
+  })
+
   it('Default render', () => {
     const wrapper = shallow(<TodoListItem {...testItem} />)
-    expect(wrapper.find('.title').text()).toEqual(testItem.title)
-    expect(wrapper.find('.btn-to-done')).toHaveLength(1)
-    expect(wrapper.find('.btn-to-active')).toHaveLength(0)
+    expect(wrapper.find(Title).text()).toEqual(testItem.title)
+    expect(wrapper.find(ButtonToDone)).toHaveLength(1)
+    expect(wrapper.find(ButtonToActive)).toHaveLength(0)
   })
 
   it('Render item with isCompleted: true ', () => {
     testItem.isCompleted = true
     const wrapper = shallow(<TodoListItem {...testItem} />)
-    expect(wrapper.find('.btn-to-done')).toHaveLength(0)
-    expect(wrapper.find('.btn-to-active')).toHaveLength(1)
+    expect(wrapper.find(ButtonToDone)).toHaveLength(0)
+    expect(wrapper.find(ButtonToActive)).toHaveLength(1)
   })
 })

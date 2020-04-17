@@ -1,4 +1,5 @@
 import React from 'react'
+import { Title, ButtonToActive, ButtonToDone } from './styles'
 
 export interface TodoListItem {
   id: string
@@ -17,16 +18,12 @@ export const TodoListItem: React.FC<Props> = (props) => {
 
   return (
     <div>
-      <div className="title">{title}</div>
+      <Title>{title}</Title>
       <div className="nav">
         {isCompleted ? (
-          <button className="btn-to-active" onClick={onActive}>
-            взять в работу
-          </button>
+          <ButtonToActive onClick={onActive}>взять в работу</ButtonToActive>
         ) : (
-          <button className="btn-to-done" onClick={onDone}>
-            выполнено
-          </button>
+          <ButtonToDone onClick={onDone}>выполнено</ButtonToDone>
         )}
         <button className="btn-remove" onClick={onRemove}>
           удалить

@@ -1,5 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import renderer from 'react-test-renderer'
+
 import { TodoListCreateItem } from './TodoListCreateItem'
 
 describe('<TodoListCreateItem />', () => {
@@ -13,6 +15,12 @@ describe('<TodoListCreateItem />', () => {
       })}
     />,
   )
+
+  it('renders snapshot', () => {
+    expect(
+      renderer.create(<TodoListCreateItem onCreate={jest.fn} />).toJSON(),
+    ).toMatchSnapshot()
+  })
 
   it('Default render', () => {
     expect(wrapper.find('input')).toHaveLength(1)

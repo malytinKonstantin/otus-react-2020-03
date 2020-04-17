@@ -54,7 +54,7 @@ module.exports = {
       },
       module: {
         ...config.module,
-        rules: [...config.module.rules, ...custom.module.rules],
+        rules: [...custom.module.rules],
       },
     }
   },

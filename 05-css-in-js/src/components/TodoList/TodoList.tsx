@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { TodoListItem as TodoListItemComponent } from './components/TodoListItem'
-import type { TodoListItem } from './components/TodoListItem'
-import { TodoListCreateItem } from './components/TodoListCreateItem'
+import {
+  TodoListItem as TodoListItemComponent,
+  TodoListCreateItem,
+} from './components'
+import type { TodoListItem } from './components'
 
 interface TodoListProps {
   list: TodoListItem[]

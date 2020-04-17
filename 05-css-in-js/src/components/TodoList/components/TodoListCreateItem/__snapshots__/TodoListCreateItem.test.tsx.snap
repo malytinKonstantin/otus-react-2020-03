@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoListCreateItem /> renders snapshot 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    className="btn-reset"
+    onClick={[Function]}
+  >
+    сброс
+  </button>
+  <button
+    className="btn-add"
+    onClick={[Function]}
+  >
+    добавить
+  </button>
+</div>
+`;

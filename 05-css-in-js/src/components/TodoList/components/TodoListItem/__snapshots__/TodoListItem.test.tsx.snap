@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoListItem /> renders snapshot 1`] = `
+<div>
+  <div
+    className="css-k24i6u"
+  >
+    test-title
+  </div>
+  <div
+    className="nav"
+  >
+    <button
+      className="css-1noqwe3"
+      onClick={[Function]}
+    >
+      выполнено
+    </button>
+    <button
+      className="btn-remove"
+      onClick={[Function]}
+    >
+      удалить
+    </button>
+  </div>
+</div>
+`;
