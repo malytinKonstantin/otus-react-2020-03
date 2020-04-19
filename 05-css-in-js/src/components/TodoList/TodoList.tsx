@@ -13,15 +13,15 @@ interface TodoListState {
   list: odoListItem[]
 }
 
-export const TodoList: React.FC<TodoListProps, TodoListState> = (props) => {
-  const [list, setList] = useState(props.list)
+export const TodoList: React.FC<TodoListProps> = (props) => {
+  const [list, setList] = useState<TodoListState>(props.list)
 
   const add = (listItem: TodoListItem) => setList([...list, listItem])
 
   const remove = (id: string) =>
     setList([...list.filter((item) => item.id !== id)])
 
-  const complete = (isCompleted: boolean) => (id: string) => {
+  const changeComplete = (isCompleted: boolean) => (id: string) => {
     const current = list.find((item) => item.id === id)
     current.isCompleted = isCompleted
     setList([...list])
@@ -36,8 +36,8 @@ export const TodoList: React.FC<TodoListProps, TodoListState> = (props) => {
           <TodoListItemComponent
             key={id}
             {...listItem}
-            onActive={() => complete(false)(id)}
-            onDone={() => complete(true)(id)}
+            onActive={() => changeComplete(false)(id)}
+            onDone={() => changeComplete(true)(id)}
             onRemove={() => remove(id)}
           />
         )
