@@ -8,14 +8,9 @@ interface TodoListCreateItemProps {
   onCreate: (listItem: TodoListItem) => void
 }
 
-interface TodoListCreateItemState {
-  title: string
-}
-
-export const TodoListCreateItem: React.FC<
-  TodoListCreateItemProps,
-  TodoListCreateItemState
-> = (props) => {
+export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
+  props,
+) => {
   const [title, setTitle] = useState('')
 
   const { onCreate } = props

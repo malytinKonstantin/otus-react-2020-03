@@ -7,39 +7,32 @@ interface TodoListProps {
   list: TodoListItem[]
 }
 
-interface TodoListState {
-  list: odoListItem[]
-}
+export const TodoList: React.FC<TodoListProps> = (props) => {
+  const [list, setList] = useState<TodoListItem[]>(props.list)
 
-export const TodoList: React.FC<TodoListProps, TodoListState> = (props) => {
-  const [list, setList] = useState(props.list)
+  const addItem = (listItem: TodoListItem) => setList([...list, listItem])
 
-  const add = (listItem: TodoListItem) => setList([...list, listItem])
+  const removeItem = (listItem: TodoListItem) =>
+    setList([...list.filter((item) => item !== listItem)])
 
-  const remove = (id: string) =>
-    setList([...list.filter((item) => item.id !== id)])
-
-  const complete = (isCompleted: boolean) => (id: string) => {
-    const current = list.find((item) => item.id === id)
-    current.isCompleted = isCompleted
+  const changeComplete = (isCompleted: boolean, listItem: TodoListItem) => {
+    const index = list.indexOf(listItem)
+    list[index] = Object.assign({}, listItem, { isCompleted })
     setList([...list])
   }
 
   return (
     <div>
-      <TodoListCreateItem onCreate={add} />
-      {list.map((listItem: TodoListItem) => {
-        const { id } = listItem
-        return (
-          <TodoListItemComponent
-            key={id}
-            {...listItem}
-            onActive={() => complete(false)(id)}
-            onDone={() => complete(true)(id)}
-            onRemove={() => remove(id)}
-          />
-        )
-      })}
+      <TodoListCreateItem onCreate={addItem} />
+      {list.map((listItem: TodoListItem) => (
+        <TodoListItemComponent
+          key={listItem.id}
+          {...listItem}
+          onActive={() => changeComplete(false, listItem)}
+          onDone={() => changeComplete(true, listItem)}
+          onRemove={() => removeItem(listItem)}
+        />
+      ))}
     </div>
   )
 }
