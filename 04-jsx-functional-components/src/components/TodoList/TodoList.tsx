@@ -8,7 +8,7 @@ interface TodoListProps {
 }
 
 export const TodoList: React.FC<TodoListProps> = (props) => {
-  const [list, setList] = useState<TodoListItem[]>(props.list)
+  const [list, setList] = useState(props.list)
 
   const addItem = (listItem: TodoListItem) => setList([...list, listItem])
 
