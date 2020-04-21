@@ -1,4 +1,6 @@
 import React, { useState, useCallback } from 'react'
+import { Wrapper, TextField, Button } from './styles'
+
 import type { TodoListItem } from '../TodoListItem'
 
 interface TodoListCreateItemProps {
@@ -30,14 +32,14 @@ export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
   }
 
   return (
-    <div>
-      <input type="text" value={title} onChange={handleChangeTitle} />
-      <button className="btn-reset" onClick={reset}>
-        сброс
-      </button>
-      <button className="btn-add" onClick={create}>
+    <Wrapper>
+      <TextField type="text" value={title} onChange={handleChangeTitle} />
+      <Button className="btn-add" onClick={create}>
         добавить
-      </button>
-    </div>
+      </Button>
+      <Button className="btn-reset" onClick={reset}>
+        сброс
+      </Button>
+    </Wrapper>
   )
 }

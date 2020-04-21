@@ -1,23 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TodoListCreateItem /> renders snapshot 1`] = `
-<div>
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.emotion-3 * {
+  margin-right: 15px;
+}
+
+.emotion-0 {
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #afafaf;
+}
+
+.emotion-1 {
+  border: none;
+  color: #fff;
+  background: #1d96ff;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+
+<div
+  className="emotion-3"
+>
   <input
+    className="emotion-0"
     onChange={[Function]}
     type="text"
     value=""
   />
   <button
-    className="btn-reset"
-    onClick={[Function]}
-  >
-    сброс
-  </button>
-  <button
-    className="btn-add"
+    className="btn-add emotion-1"
     onClick={[Function]}
   >
     добавить
+  </button>
+  <button
+    className="btn-reset emotion-1"
+    onClick={[Function]}
+  >
+    сброс
   </button>
 </div>
 `;

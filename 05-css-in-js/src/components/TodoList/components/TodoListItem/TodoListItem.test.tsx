@@ -24,14 +24,5 @@ describe('<TodoListItem />', () => {
   it('Default render', () => {
     const wrapper = shallow(<TodoListItem {...testItem} />)
     expect(wrapper.find(Title).text()).toEqual(testItem.title)
-    expect(wrapper.find(ButtonToDone)).toHaveLength(1)
-    expect(wrapper.find(ButtonToActive)).toHaveLength(0)
-  })
-
-  it('Render item with isCompleted: true ', () => {
-    testItem.isCompleted = true
-    const wrapper = shallow(<TodoListItem {...testItem} />)
-    expect(wrapper.find(ButtonToDone)).toHaveLength(0)
-    expect(wrapper.find(ButtonToActive)).toHaveLength(1)
   })
 })
