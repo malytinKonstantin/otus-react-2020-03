@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TodoList /> renders snapshot 1`] = `
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.emotion-3 * {
+  margin-right: 15px;
+}
+
+.emotion-0 {
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #afafaf;
+}
+
+.emotion-1 {
+  border: none;
+  color: #fff;
+  background: #1d96ff;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+
+.emotion-7 {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-5 {
+  font-family: monospace;
+  font-size: 16px;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+}
+
+.emotion-4 {
+  width: 16px;
+  -webkit-flex-basis: 6px;
+  -ms-flex-preferred-size: 6px;
+  flex-basis: 6px;
+  min-width: 16px;
+  height: 16px;
+  border: 1px solid blue;
+  border-radius: 3px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.emotion-4:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+.emotion-4:hover {
+  cursor: pointer;
+}
+
+.emotion-6 {
+  border: none;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background-color: #ec2c2c;
+  margin-left: 10px;
+}
+
+.emotion-6:active {
+  outline: none;
+  box-shadow: none;
+}
+
+<div>
+  <div
+    className="emotion-3"
+  >
+    <input
+      className="emotion-0"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      className="btn-add emotion-1"
+      onClick={[Function]}
+    >
+      добавить
+    </button>
+    <button
+      className="btn-reset emotion-1"
+      onClick={[Function]}
+    >
+      сброс
+    </button>
+  </div>
+  <div
+    className="emotion-7"
+  >
+    <div
+      className="emotion-5"
+      onClick={[Function]}
+    >
+      <div
+        className="emotion-4"
+      />
+      task 1
+    </div>
+    <button
+      className="btn-remove emotion-6"
+      onClick={[Function]}
+    >
+      удалить
+    </button>
+  </div>
+</div>
+`;
