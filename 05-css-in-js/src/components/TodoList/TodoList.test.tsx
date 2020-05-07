@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
+import { act } from 'react-dom/test-utils'
 
 import { TodoList } from './TodoList'
 
@@ -29,29 +30,5 @@ describe('<TodoList />', () => {
     expect(
       renderer.create(<TodoList list={todoList} />).toJSON(),
     ).toMatchSnapshot()
-  })
-
-  it('Default render', () => {
-    expect(wrapper.find('TodoListCreateItem')).toHaveLength(1)
-    expect(wrapper.find('TodoListItem')).toHaveLength(1)
-  })
-
-  it('Add task item', () => {
-    wrapper
-      .find('TodoListCreateItem')
-      .find('input')
-      .simulate('change', { target: { value: 'test item' } })
-    wrapper.find('TodoListCreateItem').find('.btn-add').at(0).simulate('click')
-    expect(wrapper.find('TodoListItem')).toHaveLength(2)
-  })
-
-  it('Remove task item', () => {
-    wrapper
-      .find('TodoListItem')
-      .at(1)
-      .find('.btn-remove')
-      .at(0)
-      .simulate('click')
-    expect(wrapper.find('TodoListItem')).toHaveLength(1)
   })
 })

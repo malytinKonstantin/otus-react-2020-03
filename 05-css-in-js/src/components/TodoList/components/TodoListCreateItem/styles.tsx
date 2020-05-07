@@ -23,3 +23,13 @@ export const Button = styled.button`
   padding: 5px 15px;
   border-radius: 3px;
 `
+
+export const ButtonReset = styled.button`
+  ${Button} {
+  }
+`
+
+export const ButtonSubmit = styled.button`
+  ${Button} {
+  }
+`

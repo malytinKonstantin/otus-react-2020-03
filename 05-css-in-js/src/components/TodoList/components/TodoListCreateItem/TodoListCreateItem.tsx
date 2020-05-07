@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
-import { Wrapper, TextField, Button } from './styles'
+import { Formik, Form, Field } from 'formik'
+import { Wrapper, TextField, ButtonReset, ButtonSubmit } from './styles'
 
 import type { TodoListItem } from '../TodoListItem'
 
@@ -13,33 +14,40 @@ interface TodoListCreateItemProps {
 export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
   props,
 ) => {
-  const [title, setTitle] = useState<string>('')
-
-  const { onCreate } = props
-
-  const handleChangeTitle = (e) => setTitle(e.target.value)
-
-  const reset = useCallback(() => setTitle(''), [])
-
-  const create = () => {
+  const handleSubmit = (values) => {
     const item = {
       id: Math.random(),
-      title,
+      title: values.title,
       isCompleted: false,
     }
-    onCreate(item)
-    reset()
+    props.onCreate(item)
   }
 
   return (
-    <Wrapper>
-      <TextField type="text" value={title} onChange={handleChangeTitle} />
-      <Button className="btn-add" onClick={create}>
-        добавить
-      </Button>
-      <Button className="btn-reset" onClick={reset}>
-        сброс
-      </Button>
-    </Wrapper>
+    <Formik
+      onSubmit={handleSubmit}
+      initialValues={{
+        title: '',
+      }}
+    >
+      {(props) => (
+        <Form>
+          <Wrapper>
+            <Field
+              type="text"
+              name="title"
+              id="title"
+              component={TextField}
+              value={props.values.title}
+              onChange={props.handleChange}
+            />
+            <ButtonSubmit type="submit">добавить</ButtonSubmit>
+            <ButtonReset type="button" onClick={props.resetForm}>
+              сброс
+            </ButtonReset>
+          </Wrapper>
+        </Form>
+      )}
+    </Formik>
   )
 }

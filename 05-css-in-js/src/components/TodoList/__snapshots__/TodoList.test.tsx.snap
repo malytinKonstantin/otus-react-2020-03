@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TodoList /> renders snapshot 1`] = `
-.emotion-3 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12,7 +12,7 @@ exports[`<TodoList /> renders snapshot 1`] = `
   margin-bottom: 15px;
 }
 
-.emotion-3 * {
+.emotion-6 * {
   margin-right: 15px;
 }
 
@@ -23,15 +23,7 @@ exports[`<TodoList /> renders snapshot 1`] = `
   border: 1px solid #afafaf;
 }
 
-.emotion-1 {
-  border: none;
-  color: #fff;
-  background: #1d96ff;
-  padding: 5px 15px;
-  border-radius: 3px;
-}
-
-.emotion-7 {
+.emotion-14 {
   margin-bottom: 10px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -46,7 +38,7 @@ exports[`<TodoList /> renders snapshot 1`] = `
   align-items: center;
 }
 
-.emotion-5 {
+.emotion-10 {
   font-family: monospace;
   font-size: 16px;
   color: #000;
@@ -57,7 +49,7 @@ exports[`<TodoList /> renders snapshot 1`] = `
   cursor: pointer;
 }
 
-.emotion-4 {
+.emotion-8 {
   width: 16px;
   -webkit-flex-basis: 6px;
   -ms-flex-preferred-size: 6px;
@@ -70,7 +62,7 @@ exports[`<TodoList /> renders snapshot 1`] = `
   position: relative;
 }
 
-.emotion-4:before {
+.emotion-8:before {
   content: '';
   position: absolute;
   top: 3px;
@@ -81,11 +73,11 @@ exports[`<TodoList /> renders snapshot 1`] = `
   background-color: transparent;
 }
 
-.emotion-4:hover {
+.emotion-8:hover {
   cursor: pointer;
 }
 
-.emotion-6 {
+.emotion-12 {
   border: none;
   color: #fff;
   padding: 3px 10px;
@@ -94,48 +86,102 @@ exports[`<TodoList /> renders snapshot 1`] = `
   margin-left: 10px;
 }
 
-.emotion-6:active {
+.emotion-12:active {
   outline: none;
   box-shadow: none;
 }
 
 <div>
-  <div
-    className="emotion-3"
-  >
-    <input
-      className="emotion-0"
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-    <button
-      className="btn-add emotion-1"
-      onClick={[Function]}
-    >
-      добавить
-    </button>
-    <button
-      className="btn-reset emotion-1"
-      onClick={[Function]}
-    >
-      сброс
-    </button>
-  </div>
-  <div
-    className="emotion-7"
+  <form
+    action="#"
+    onReset={[Function]}
+    onSubmit={[Function]}
   >
     <div
-      className="emotion-5"
+      className="emotion-6 emotion-7"
+    >
+      <input
+        className="emotion-0 emotion-1"
+        form={
+          Object {
+            "dirty": false,
+            "errors": Object {},
+            "getFieldHelpers": [Function],
+            "getFieldMeta": [Function],
+            "getFieldProps": [Function],
+            "handleBlur": [Function],
+            "handleChange": [Function],
+            "handleReset": [Function],
+            "handleSubmit": [Function],
+            "initialErrors": Object {},
+            "initialStatus": undefined,
+            "initialTouched": Object {},
+            "initialValues": Object {
+              "title": "",
+            },
+            "isSubmitting": false,
+            "isValid": true,
+            "isValidating": false,
+            "registerField": [Function],
+            "resetForm": [Function],
+            "setErrors": [Function],
+            "setFieldError": [Function],
+            "setFieldTouched": [Function],
+            "setFieldValue": [Function],
+            "setFormikState": [Function],
+            "setStatus": [Function],
+            "setSubmitting": [Function],
+            "setTouched": [Function],
+            "setValues": [Function],
+            "status": undefined,
+            "submitCount": 0,
+            "submitForm": [Function],
+            "touched": Object {},
+            "unregisterField": [Function],
+            "validateField": [Function],
+            "validateForm": [Function],
+            "validateOnBlur": true,
+            "validateOnChange": true,
+            "validateOnMount": false,
+            "values": Object {
+              "title": "",
+            },
+          }
+        }
+        id="title"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <button
+        className="emotion-2 emotion-3"
+        type="submit"
+      >
+        добавить
+      </button>
+      <button
+        className="emotion-4 emotion-5"
+        onClick={[Function]}
+        type="button"
+      >
+        сброс
+      </button>
+    </div>
+  </form>
+  <div
+    className="emotion-14 emotion-15"
+  >
+    <div
+      className="emotion-10 emotion-11"
       onClick={[Function]}
     >
       <div
-        className="emotion-4"
+        className="emotion-8 emotion-9"
       />
       task 1
     </div>
     <button
-      className="btn-remove emotion-6"
+      className="emotion-12 emotion-13"
       onClick={[Function]}
     >
       удалить

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TodoListCreateItem /> renders snapshot 1`] = `
-.emotion-3 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -12,7 +12,7 @@ exports[`<TodoListCreateItem /> renders snapshot 1`] = `
   margin-bottom: 15px;
 }
 
-.emotion-3 * {
+.emotion-6 * {
   margin-right: 15px;
 }
 
@@ -23,34 +23,80 @@ exports[`<TodoListCreateItem /> renders snapshot 1`] = `
   border: 1px solid #afafaf;
 }
 
-.emotion-1 {
-  border: none;
-  color: #fff;
-  background: #1d96ff;
-  padding: 5px 15px;
-  border-radius: 3px;
-}
-
-<div
-  className="emotion-3"
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
 >
-  <input
-    className="emotion-0"
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
-  <button
-    className="btn-add emotion-1"
-    onClick={[Function]}
+  <div
+    className="emotion-6 emotion-7"
   >
-    добавить
-  </button>
-  <button
-    className="btn-reset emotion-1"
-    onClick={[Function]}
-  >
-    сброс
-  </button>
-</div>
+    <input
+      className="emotion-0 emotion-1"
+      form={
+        Object {
+          "dirty": false,
+          "errors": Object {},
+          "getFieldHelpers": [Function],
+          "getFieldMeta": [Function],
+          "getFieldProps": [Function],
+          "handleBlur": [Function],
+          "handleChange": [Function],
+          "handleReset": [Function],
+          "handleSubmit": [Function],
+          "initialErrors": Object {},
+          "initialStatus": undefined,
+          "initialTouched": Object {},
+          "initialValues": Object {
+            "title": "",
+          },
+          "isSubmitting": false,
+          "isValid": true,
+          "isValidating": false,
+          "registerField": [Function],
+          "resetForm": [Function],
+          "setErrors": [Function],
+          "setFieldError": [Function],
+          "setFieldTouched": [Function],
+          "setFieldValue": [Function],
+          "setFormikState": [Function],
+          "setStatus": [Function],
+          "setSubmitting": [Function],
+          "setTouched": [Function],
+          "setValues": [Function],
+          "status": undefined,
+          "submitCount": 0,
+          "submitForm": [Function],
+          "touched": Object {},
+          "unregisterField": [Function],
+          "validateField": [Function],
+          "validateForm": [Function],
+          "validateOnBlur": true,
+          "validateOnChange": true,
+          "validateOnMount": false,
+          "values": Object {
+            "title": "",
+          },
+        }
+      }
+      id="title"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      className="emotion-2 emotion-3"
+      type="submit"
+    >
+      добавить
+    </button>
+    <button
+      className="emotion-4 emotion-5"
+      onClick={[Function]}
+      type="button"
+    >
+      сброс
+    </button>
+  </div>
+</form>
 `;
