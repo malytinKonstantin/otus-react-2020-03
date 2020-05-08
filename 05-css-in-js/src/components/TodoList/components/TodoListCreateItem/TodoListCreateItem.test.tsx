@@ -1,15 +1,15 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
+import { act } from 'react-dom/test-utils'
 
 import { TodoListCreateItem } from './TodoListCreateItem'
-import { TextField } from './styles'
 
 describe('<TodoListCreateItem />', () => {
   let nextItem = null
   const title = 'title test item'
 
-  const wrapper = shallow(
+  const wrapper = mount(
     <TodoListCreateItem
       onCreate={jest.fn((item) => {
         nextItem = item
@@ -24,24 +24,18 @@ describe('<TodoListCreateItem />', () => {
   })
 
   it('Default render', () => {
-    expect(wrapper.find(TextField)).toHaveLength(1)
-    expect(wrapper.find('.btn-reset')).toHaveLength(1)
-    expect(wrapper.find('.btn-add')).toHaveLength(1)
+    expect(wrapper.find('TextField')).toHaveLength(1)
+    expect(wrapper.find('ButtonReset')).toHaveLength(1)
+    expect(wrapper.find('ButtonSubmit')).toHaveLength(1)
   })
 
-  it('input change event', () => {
-    wrapper.find(TextField).simulate('change', { target: { value: title } })
-    expect(wrapper.find(TextField).prop('value')).toBe(title)
-  })
-
-  it('reset button click', () => {
-    wrapper.find('.btn-reset').simulate('click')
-    expect(wrapper.find(TextField).prop('value')).toBe('')
-  })
-
-  it('add button click', () => {
-    wrapper.find(TextField).simulate('change', { target: { value: title } })
-    wrapper.find('.btn-add').simulate('click')
+  it('add button click', async () => {
+    await act(async () => {
+      wrapper
+        .find('[name="title"]')
+        .simulate('change', { target: { value: title, name: 'title' } })
+      wrapper.find('form').simulate('submit')
+    })
     expect(nextItem).not.toEqual(null)
     expect(nextItem.title).toBe(title)
     expect(nextItem.isCompleted).toBe(false)

@@ -2,7 +2,6 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import { Title, ButtonToActive, ButtonToDone } from './styles'
 import { TodoListItem } from './TodoListItem'
 
 describe('<TodoListItem />', () => {
@@ -23,6 +22,6 @@ describe('<TodoListItem />', () => {
 
   it('Default render', () => {
     const wrapper = shallow(<TodoListItem {...testItem} />)
-    expect(wrapper.find(Title).text()).toEqual(testItem.title)
+    expect(wrapper.find('Title').text()).toEqual(testItem.title)
   })
 })

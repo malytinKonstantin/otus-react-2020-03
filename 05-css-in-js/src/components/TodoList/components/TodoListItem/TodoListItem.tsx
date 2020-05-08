@@ -22,9 +22,7 @@ export const TodoListItem: React.FC<Props> = (props) => {
         <Checkbox isCompleted={isCompleted} />
         {title}
       </Title>
-      <ButtonRemove className="btn-remove" onClick={onRemove}>
-        удалить
-      </ButtonRemove>
+      <ButtonRemove onClick={onRemove}>удалить</ButtonRemove>
     </Wrapper>
   )
 }

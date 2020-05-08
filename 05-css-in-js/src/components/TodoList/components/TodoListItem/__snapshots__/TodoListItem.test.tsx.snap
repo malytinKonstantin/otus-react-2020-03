@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TodoListItem /> renders snapshot 1`] = `
-.emotion-3 {
+.emotion-6 {
   margin-bottom: 10px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -16,7 +16,7 @@ exports[`<TodoListItem /> renders snapshot 1`] = `
   align-items: center;
 }
 
-.emotion-1 {
+.emotion-2 {
   font-family: monospace;
   font-size: 16px;
   color: #000;
@@ -55,7 +55,7 @@ exports[`<TodoListItem /> renders snapshot 1`] = `
   cursor: pointer;
 }
 
-.emotion-2 {
+.emotion-4 {
   border: none;
   color: #fff;
   padding: 3px 10px;
@@ -64,25 +64,25 @@ exports[`<TodoListItem /> renders snapshot 1`] = `
   margin-left: 10px;
 }
 
-.emotion-2:active {
+.emotion-4:active {
   outline: none;
   box-shadow: none;
 }
 
 <div
-  className="emotion-3"
+  className="emotion-6 emotion-7"
 >
   <div
-    className="emotion-1"
+    className="emotion-2 emotion-3"
     onClick={[Function]}
   >
     <div
-      className="emotion-0"
+      className="emotion-0 emotion-1"
     />
     test-title
   </div>
   <button
-    className="btn-remove emotion-2"
+    className="emotion-4 emotion-5"
     onClick={[Function]}
   >
     удалить
