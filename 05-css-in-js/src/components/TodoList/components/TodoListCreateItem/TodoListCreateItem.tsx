@@ -4,7 +4,7 @@ import { Wrapper, TextField, ButtonReset, ButtonSubmit } from './styles'
 
 import type { TodoListItem } from '../TodoListItem'
 
-interface TodoListCreateItemProps {
+export interface TodoListCreateItemProps {
   /*
    * callback from parent for submit created item
    */
@@ -14,13 +14,14 @@ interface TodoListCreateItemProps {
 export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
   props,
 ) => {
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, form) => {
     const item = {
       id: Math.random(),
       title: values.title,
       isCompleted: false,
     }
     props.onCreate(item)
+    form.resetForm()
   }
 
   return (

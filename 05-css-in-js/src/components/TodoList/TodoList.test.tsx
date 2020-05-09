@@ -3,18 +3,9 @@ import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import { act } from 'react-dom/test-utils'
 
-import { TodoList } from './TodoList'
+import { TodoListContainer } from './TodoListContainer'
 
-import {
-  TodoListItem,
-  TodoListCreateItem,
-  ButtonToDone,
-  ButtonToActive,
-} from './components'
-import { TextField } from './components/TodoListCreateItem/styles'
-import { ButtonRemove } from './components/TodoListItem/styles'
-
-describe('<TodoList />', () => {
+describe('<TodoListContainer />', () => {
   const todoList = [
     {
       id: 0,
@@ -24,11 +15,11 @@ describe('<TodoList />', () => {
     },
   ]
 
-  const wrapper = mount(<TodoList list={todoList} />)
+  const wrapper = mount(<TodoListContainer list={todoList} />)
 
   it('renders snapshot', () => {
     expect(
-      renderer.create(<TodoList list={todoList} />).toJSON(),
+      renderer.create(<TodoListContainer list={todoList} />).toJSON(),
     ).toMatchSnapshot()
   })
 })

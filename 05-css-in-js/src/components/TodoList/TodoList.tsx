@@ -3,45 +3,38 @@ import {
   TodoListItem as TodoListItemComponent,
   TodoListCreateItem,
 } from './components'
-import type { TodoListItem } from './components'
+import type {
+  TodoListItem,
+  TodoListHandlers,
+  TodoListCreateItemProps,
+} from './components'
 
-interface TodoListProps {
+interface TodoListProps extends TodoListHandlers, TodoListCreateItemProps {
   list: TodoListItem[]
 }
 
-interface TodoListState {
-  list: odoListItem[]
-}
-
-export const TodoList: React.FC<TodoListProps> = (props) => {
-  const [list, setList] = useState<TodoListState>(props.list)
-
-  const add = (listItem: TodoListItem) => setList([...list, listItem])
-
-  const remove = (id: string) =>
-    setList([...list.filter((item) => item.id !== id)])
-
-  const changeComplete = (isCompleted: boolean) => (id: string) => {
-    const current = list.find((item) => item.id === id)
-    current.isCompleted = isCompleted
-    setList([...list])
-  }
-
+export const TodoList: React.FC<TodoListProps> = ({
+  list,
+  onCreate,
+  onActive,
+  onDone,
+  onRemove,
+}) => {
   return (
-    <div>
-      <TodoListCreateItem onCreate={add} />
+    <>
+      <TodoListCreateItem onCreate={onCreate} />
       {list.map((listItem: TodoListItem) => {
         const { id } = listItem
         return (
           <TodoListItemComponent
             key={id}
             {...listItem}
-            onActive={() => changeComplete(false)(id)}
-            onDone={() => changeComplete(true)(id)}
-            onRemove={() => remove(id)}
+            onActive={() => onActive(id)}
+            onDone={() => onDone(id)}
+            onRemove={() => onRemove(id)}
           />
         )
       })}
-    </div>
+    </>
   )
 }
