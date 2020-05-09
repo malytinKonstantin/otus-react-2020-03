@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { Wrapper, TextField, ButtonReset, ButtonSubmit } from './styles'
 
@@ -31,7 +31,7 @@ export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
         title: '',
       }}
     >
-      {(props) => (
+      {(formProps) => (
         <Form>
           <Wrapper>
             <Field
@@ -39,11 +39,11 @@ export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
               name="title"
               id="title"
               component={TextField}
-              value={props.values.title}
-              onChange={props.handleChange}
+              value={formProps.values.title}
+              onChange={formProps.handleChange}
             />
             <ButtonSubmit type="submit">добавить</ButtonSubmit>
-            <ButtonReset type="button" onClick={props.resetForm}>
+            <ButtonReset type="button" onClick={formProps.resetForm}>
               сброс
             </ButtonReset>
           </Wrapper>

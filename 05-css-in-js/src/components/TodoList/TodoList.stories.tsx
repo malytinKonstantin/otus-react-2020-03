@@ -1,6 +1,6 @@
 import React from 'react'
 import { withKnobs, array } from '@storybook/addon-knobs'
-import { TodoList } from './TodoList'
+import { TodoListContainer } from './TodoListContainer'
 
 export default {
   title: 'Todo list',
@@ -13,5 +13,5 @@ export const TodoListExample: React.FC<{}> = () => {
     { id: 1, title: 'item 2', isCompleted: false },
     { id: 3, title: 'item 3', isCompleted: false },
   ]
-  return <TodoList list={todoList} />
+  return <TodoListContainer list={todoList} />
 }
