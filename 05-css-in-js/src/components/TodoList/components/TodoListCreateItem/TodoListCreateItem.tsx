@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import { Formik, Form, Field } from 'formik'
 import { Wrapper, TextField, ButtonReset, ButtonSubmit } from './styles'
 
 import type { TodoListItem } from '../TodoListItem'
 
-interface TodoListCreateItemProps {
+export interface TodoListCreateItemProps {
   /*
    * callback from parent for submit created item
    */
@@ -14,13 +14,14 @@ interface TodoListCreateItemProps {
 export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
   props,
 ) => {
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, form) => {
     const item = {
       id: Math.random(),
       title: values.title,
       isCompleted: false,
     }
     props.onCreate(item)
+    form.resetForm()
   }
 
   return (
@@ -30,7 +31,7 @@ export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
         title: '',
       }}
     >
-      {(props) => (
+      {(formProps) => (
         <Form>
           <Wrapper>
             <Field
@@ -38,11 +39,11 @@ export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
               name="title"
               id="title"
               component={TextField}
-              value={props.values.title}
-              onChange={props.handleChange}
+              value={formProps.values.title}
+              onChange={formProps.handleChange}
             />
             <ButtonSubmit type="submit">добавить</ButtonSubmit>
-            <ButtonReset type="button" onClick={props.resetForm}>
+            <ButtonReset type="button" onClick={formProps.resetForm}>
               сброс
             </ButtonReset>
           </Wrapper>

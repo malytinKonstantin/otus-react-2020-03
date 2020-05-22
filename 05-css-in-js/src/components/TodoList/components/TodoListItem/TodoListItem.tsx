@@ -7,13 +7,15 @@ export interface TodoListItem {
   isCompleted: boolean
 }
 
-interface TodoListItemProps extends TodoListItem {
+export interface TodoListHandlers {
   onDone: () => void
   onActive: () => void
   onRemove: () => void
 }
 
-export const TodoListItem: React.FC<Props> = (props) => {
+interface TodoListItemProps extends TodoListItem, TodoListHandlers {}
+
+export const TodoListItem: React.FC<TodoListItemProps> = (props) => {
   const { title, isCompleted, onDone, onActive, onRemove } = props
 
   return (

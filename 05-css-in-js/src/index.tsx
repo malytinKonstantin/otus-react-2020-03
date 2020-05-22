@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { TodoList } from './components/TodoList'
+import { TodoListContainer } from './components/TodoList'
 
 const todoList = [
   {
@@ -11,4 +11,4 @@ const todoList = [
   },
 ]
 
-render(<TodoList list={todoList} />, document.getElementById('root'))
+render(<TodoListContainer list={todoList} />, document.getElementById('root'))

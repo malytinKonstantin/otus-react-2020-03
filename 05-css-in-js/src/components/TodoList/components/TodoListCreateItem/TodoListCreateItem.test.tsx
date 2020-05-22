@@ -11,9 +11,9 @@ describe('<TodoListCreateItem />', () => {
 
   const wrapper = mount(
     <TodoListCreateItem
-      onCreate={jest.fn((item) => {
+      onCreate={(item) => {
         nextItem = item
-      })}
+      }}
     />,
   )
 
@@ -21,12 +21,6 @@ describe('<TodoListCreateItem />', () => {
     expect(
       renderer.create(<TodoListCreateItem onCreate={jest.fn} />).toJSON(),
     ).toMatchSnapshot()
-  })
-
-  it('Default render', () => {
-    expect(wrapper.find('TextField')).toHaveLength(1)
-    expect(wrapper.find('ButtonReset')).toHaveLength(1)
-    expect(wrapper.find('ButtonSubmit')).toHaveLength(1)
   })
 
   it('add button click', async () => {
