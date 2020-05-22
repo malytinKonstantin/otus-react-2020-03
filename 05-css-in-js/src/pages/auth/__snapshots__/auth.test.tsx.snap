@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthPage /> renders snapshot 1`] = `
+.emotion-12 {
+  margin: 0 auto;
+  padding-top: 100px;
+  width: 200px;
+}
+
+.emotion-4 {
+  margin-bottom: 15px;
+}
+
+.emotion-0 {
+  display: block;
+}
+
+.emotion-2 {
+  width: 100%;
+}
+
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div
+    className="emotion-12 emotion-13"
+  >
+    <div
+      className="emotion-4 emotion-5"
+    >
+      <label
+        className="emotion-0 emotion-1"
+        htmlFor="login"
+      >
+        name
+      </label>
+      <input
+        className="emotion-2 emotion-3"
+        form={
+          Object {
+            "dirty": false,
+            "errors": Object {},
+            "getFieldHelpers": [Function],
+            "getFieldMeta": [Function],
+            "getFieldProps": [Function],
+            "handleBlur": [Function],
+            "handleChange": [Function],
+            "handleReset": [Function],
+            "handleSubmit": [Function],
+            "initialErrors": Object {},
+            "initialStatus": undefined,
+            "initialTouched": Object {},
+            "initialValues": Object {
+              "login": "",
+              "password": "",
+            },
+            "isSubmitting": false,
+            "isValid": true,
+            "isValidating": false,
+            "registerField": [Function],
+            "resetForm": [Function],
+            "setErrors": [Function],
+            "setFieldError": [Function],
+            "setFieldTouched": [Function],
+            "setFieldValue": [Function],
+            "setFormikState": [Function],
+            "setStatus": [Function],
+            "setSubmitting": [Function],
+            "setTouched": [Function],
+            "setValues": [Function],
+            "status": undefined,
+            "submitCount": 0,
+            "submitForm": [Function],
+            "touched": Object {},
+            "unregisterField": [Function],
+            "validateField": [Function],
+            "validateForm": [Function],
+            "validateOnBlur": true,
+            "validateOnChange": true,
+            "validateOnMount": false,
+            "values": Object {
+              "login": "",
+              "password": "",
+            },
+          }
+        }
+        id="login"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="emotion-4 emotion-5"
+    >
+      <label
+        className="emotion-0 emotion-1"
+        htmlFor="password"
+      >
+        password
+      </label>
+      <input
+        className="emotion-2 emotion-3"
+        form={
+          Object {
+            "dirty": false,
+            "errors": Object {},
+            "getFieldHelpers": [Function],
+            "getFieldMeta": [Function],
+            "getFieldProps": [Function],
+            "handleBlur": [Function],
+            "handleChange": [Function],
+            "handleReset": [Function],
+            "handleSubmit": [Function],
+            "initialErrors": Object {},
+            "initialStatus": undefined,
+            "initialTouched": Object {},
+            "initialValues": Object {
+              "login": "",
+              "password": "",
+            },
+            "isSubmitting": false,
+            "isValid": true,
+            "isValidating": false,
+            "registerField": [Function],
+            "resetForm": [Function],
+            "setErrors": [Function],
+            "setFieldError": [Function],
+            "setFieldTouched": [Function],
+            "setFieldValue": [Function],
+            "setFormikState": [Function],
+            "setStatus": [Function],
+            "setSubmitting": [Function],
+            "setTouched": [Function],
+            "setValues": [Function],
+            "status": undefined,
+            "submitCount": 0,
+            "submitForm": [Function],
+            "touched": Object {},
+            "unregisterField": [Function],
+            "validateField": [Function],
+            "validateForm": [Function],
+            "validateOnBlur": true,
+            "validateOnChange": true,
+            "validateOnMount": false,
+            "values": Object {
+              "login": "",
+              "password": "",
+            },
+          }
+        }
+        id="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <button
+      type="submit"
+    >
+      login
+    </button>
+  </div>
+</form>
+`;

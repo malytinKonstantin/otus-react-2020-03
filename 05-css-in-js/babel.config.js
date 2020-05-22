@@ -4,7 +4,7 @@ module.exports = {
     '@babel/preset-react',
     '@babel/preset-typescript',
   ],
-  plugins: ['emotion'],
+  plugins: ['emotion', '@babel/plugin-proposal-class-properties'],
   env: {
     production: {
       plugins: ['emotion'],
