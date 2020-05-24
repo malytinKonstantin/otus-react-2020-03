@@ -1,14 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { TodoListContainer } from './components/TodoList'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { App } from './app'
 
-const todoList = [
-  {
-    id: 0,
-    title: 'task 1',
-    descriprion: 'learn frontend',
-    isCompleted: false,
-  },
-]
+const wrapper = (
+  <Router>
+    <App />
+  </Router>
+)
 
-render(<TodoListContainer list={todoList} />, document.getElementById('root'))
+render(wrapper, document.getElementById('root'))
