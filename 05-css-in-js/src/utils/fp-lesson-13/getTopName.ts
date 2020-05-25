@@ -7,8 +7,15 @@ type Team = {
 }
 
 export const getTopName = (teams: Team[]): string => {
-  const sorted = [...teams].sort((a: Team, b: Team) => a.score - b.score)
-  const topTeam = sorted[sorted.length - 1]
+  const topTeam = teams.reduce(
+    (acc, team) => {
+      if (acc.score < team.score) {
+        return team
+      }
+      return acc
+    },
+    { score: 0, name: '' },
+  )
   return topTeam.name
 }
 

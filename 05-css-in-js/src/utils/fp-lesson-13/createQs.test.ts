@@ -10,7 +10,7 @@ describe('test createQs', () => {
   }
 
   it('parse query object to string', () => {
-    const result = createQs<typeof obj>(obj)
+    const result = createQs(obj)
     expect(result).toBe(qs)
   })
 

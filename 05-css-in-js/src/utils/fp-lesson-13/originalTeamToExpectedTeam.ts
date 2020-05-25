@@ -8,6 +8,7 @@ type ExpectedTeam = {
   name: string
   league: string
   roster: number
+  size: number
 }
 
 export const originalTeamToExpectedTeam = (
@@ -15,8 +16,7 @@ export const originalTeamToExpectedTeam = (
 ): ExpectedTeam => {
   const roster = 25
   const name = 'New York Badgers'
-  const { league } = originalTeam
-  return { name, league, roster }
+  return { ...originalTeam, roster, name }
 }
 
 type Captain = {

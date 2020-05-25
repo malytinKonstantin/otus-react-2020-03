@@ -14,6 +14,7 @@ describe('originalTeamToExpectedTeam test', () => {
     const expectedTeam = {
       name: 'New York Badgers',
       league: 'Minor',
+      size: 15,
       roster: 25,
     }
 

@@ -6,13 +6,13 @@ export const createQs = <T extends { [key: string]: string }>(
 ): string => {
   const queryString = Object.keys(obj).reduce((acc, key) => {
     const char = acc.length === 0 ? '?' : '&'
-    return acc + char + key + '=' + obj[key]
+    return acc + char + key + '=' + encodeURIComponent(obj[key])
   }, '')
 
   return queryString
 }
 
-const concatKeyValue = ([key, value]) => key + '=' + value
+const concatKeyValue = ([key, value]) => key + '=' + encodeURIComponent(value)
 
 const reduceQs = (acc, curr) => `${acc}${acc.length ? '&' : '?'}${curr}`
 
