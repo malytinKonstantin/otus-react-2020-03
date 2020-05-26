@@ -1,6 +1,8 @@
 import { toPairsIn, map, reduce, replace, split } from 'ramda'
 import { compose } from './compose'
 
+type KeyValueTuple = [string, string]
+
 export const createQs = <T extends { [key: string]: string }>(
   obj: T,
 ): string => {
@@ -12,9 +14,11 @@ export const createQs = <T extends { [key: string]: string }>(
   return queryString
 }
 
-const concatKeyValue = ([key, value]) => key + '=' + encodeURIComponent(value)
+const concatKeyValue = ([key, value]: KeyValueTuple): string =>
+  key + '=' + encodeURIComponent(value)
 
-const reduceQs = (acc, curr) => `${acc}${acc.length ? '&' : '?'}${curr}`
+const reduceQs = (acc: string, curr: string): string =>
+  `${acc}${acc.length ? '&' : '?'}${curr}`
 
 export const createQsR = compose(
   reduce(reduceQs, ''),
@@ -22,9 +26,13 @@ export const createQsR = compose(
   toPairsIn,
 )
 
-const strToKeyValue = (str) => str.split('=')
+const strToKeyValue = (str: string): KeyValueTuple =>
+  str.split('=') as KeyValueTuple
 
-const arrToObj = (acc, [key, value]) => {
+const arrToObj = (
+  acc: { [key: string]: string },
+  [key, value]: KeyValueTuple,
+) => {
   acc[key] = value
   return acc
 }
