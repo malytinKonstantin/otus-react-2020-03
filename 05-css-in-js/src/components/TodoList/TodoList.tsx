@@ -3,14 +3,13 @@ import {
   TodoListItem as TodoListItemComponent,
   TodoListCreateItem,
 } from './components'
-import type {
-  TodoListItem,
-  TodoListHandlers,
-  TodoListCreateItemProps,
-} from './components'
+import type { TodoListItem, TodoListCreateItemProps } from './components'
 
-interface TodoListProps extends TodoListHandlers, TodoListCreateItemProps {
+interface TodoListProps extends TodoListCreateItemProps {
   list: TodoListItem[]
+  onActive(id: string): void
+  onDone(id: string): void
+  onRemove(id: string): void
 }
 
 export const TodoList: React.FC<TodoListProps> = ({

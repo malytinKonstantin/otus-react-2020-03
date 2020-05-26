@@ -14,9 +14,13 @@ export interface TodoListCreateItemProps {
 export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
   props,
 ) => {
-  const handleSubmit = (values, form) => {
+  const initialValues = {
+    title: '',
+  }
+
+  const handleSubmit = (values: typeof initialValues, form: any) => {
     const item = {
-      id: Math.random(),
+      id: String(Math.random()),
       title: values.title,
       isCompleted: false,
     }
@@ -25,12 +29,7 @@ export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
   }
 
   return (
-    <Formik
-      onSubmit={handleSubmit}
-      initialValues={{
-        title: '',
-      }}
-    >
+    <Formik onSubmit={handleSubmit} initialValues={initialValues}>
       {(formProps) => (
         <Form>
           <Wrapper>
@@ -43,7 +42,7 @@ export const TodoListCreateItem: React.FC<TodoListCreateItemProps> = (
               onChange={formProps.handleChange}
             />
             <ButtonSubmit type="submit">добавить</ButtonSubmit>
-            <ButtonReset type="button" onClick={formProps.resetForm}>
+            <ButtonReset type="button" onClick={() => formProps.resetForm}>
               сброс
             </ButtonReset>
           </Wrapper>

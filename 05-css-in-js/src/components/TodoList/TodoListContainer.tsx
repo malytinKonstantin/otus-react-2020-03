@@ -14,8 +14,10 @@ export const TodoListContainer: React.FC<{ list: TodoListItem[] }> = (
 
   const changeComplete = (isCompleted: boolean) => (id: string) => {
     const current = list.find((item) => item.id === id)
-    current.isCompleted = isCompleted
-    setList([...list])
+    if (current) {
+      current.isCompleted = isCompleted
+      setList([...list])
+    }
   }
 
   return (

@@ -1,12 +1,11 @@
 import { HomePage } from 'pages/home'
 import { AboutPage } from 'pages/about'
 import { ContactsPage } from 'pages/contacts'
+import type { RouteProps } from 'react-router-dom'
 
-interface RouteElement {
+interface RouteElement extends RouteProps {
   path: string
   label: string
-  component: React.Element
-  props: object
 }
 
 export const routes: RouteElement[] = [

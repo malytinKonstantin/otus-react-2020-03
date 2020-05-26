@@ -1,5 +1,5 @@
 import React from 'react'
-import { Title, Checkbox, Button, ButtonRemove, Wrapper, Nav } from './styles'
+import { Title, Checkbox, ButtonRemove, Wrapper } from './styles'
 
 export interface TodoListItem {
   id: string

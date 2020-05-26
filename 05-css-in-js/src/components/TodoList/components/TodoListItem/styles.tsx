@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { boolean } from '@storybook/addon-knobs'
 
 export const Wrapper = styled.div`
   margin-bottom: 10px;
@@ -15,7 +16,9 @@ export const Title = styled.div`
   display: flex;
   cursor: pointer;
 `
-
+interface CheckboxProps {
+  isCompleted: boolean
+}
 export const Checkbox = styled.div`
   width: 16px;
   flex-basis: 6px;
@@ -34,7 +37,7 @@ export const Checkbox = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 2px;
-    background-color: ${({ isCompleted }) =>
+    background-color: ${({ isCompleted }: CheckboxProps) =>
       isCompleted ? 'blue' : 'transparent'};
   }
 

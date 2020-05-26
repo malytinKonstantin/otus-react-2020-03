@@ -7,19 +7,18 @@ interface AuthPageProps {
 }
 
 export const AuthPage: FC<AuthPageProps> = ({ onLogin }) => {
-  const handleSubmit = (values, form) => {
+  const initialValues = {
+    login: '',
+    password: '',
+  }
+
+  const handleSubmit = (values: typeof initialValues, form: any) => {
     onLogin(values)
     form.resetForm()
   }
 
   return (
-    <Formik
-      onSubmit={handleSubmit}
-      initialValues={{
-        login: '',
-        password: '',
-      }}
-    >
+    <Formik onSubmit={handleSubmit} initialValues={initialValues}>
       {(formProps) => (
         <Form>
           <Wrapper>
