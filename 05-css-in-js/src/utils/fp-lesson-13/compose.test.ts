@@ -4,7 +4,7 @@ import { map, sum } from 'ramda'
 describe('test compose', () => {
   const fn = compose(
     sum,
-    map((a) => a + 1),
+    map((a: number) => a + 1),
   )
 
   it('test composed fn', () => {
