@@ -2,7 +2,7 @@ import React from 'react'
 import { UserLogin } from './user-login'
 import { mount } from 'enzyme'
 
-const delay = (ms) => {
+const delay = (ms: number) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve()

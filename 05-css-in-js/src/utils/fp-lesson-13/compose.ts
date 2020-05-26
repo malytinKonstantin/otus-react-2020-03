@@ -1,6 +1,6 @@
-export const compose = (...fnArgs) => {
+export const compose = (...fnArgs: Function[]) => {
   const [first, ...funcs] = fnArgs.reverse()
-  return (...args) => {
+  return (...args: any[]) => {
     return funcs.reduce((res, fn) => fn(res), first(...args))
   }
 }

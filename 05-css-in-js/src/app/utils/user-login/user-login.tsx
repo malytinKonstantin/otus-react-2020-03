@@ -8,7 +8,7 @@ export interface UserLoginArgs {
 export interface CurrentUser extends UserLoginArgs {}
 
 interface UserLoginProps {
-  children(props: childrenRenderwProps): React.Element
+  children(props: childrenRenderProps): React.ReactNode
 }
 
 interface UserLoginState {
@@ -21,13 +21,14 @@ export interface childrenRenderProps {
   isAuthorizing: boolean
   login(user: UserLoginArgs): void
   logout(): void
+  user: CurrentUser | null
 }
 
 export class UserLogin extends Component<UserLoginProps, UserLoginState> {
   private USER_KEY = 'user'
 
-  constructor() {
-    super()
+  constructor(props: UserLoginProps) {
+    super(props)
 
     this.state = {
       isAuthorized: this.getIsAuthorized(),
@@ -41,7 +42,9 @@ export class UserLogin extends Component<UserLoginProps, UserLoginState> {
 
   getUser = (): CurrentUser | null => {
     const user = this.getIsAuthorized()
-      ? JSON.parse(localStorage.getItem(this.USER_KEY))
+      ? (JSON.parse(
+          localStorage.getItem(this.USER_KEY) as string,
+        ) as CurrentUser)
       : null
     return user
   }

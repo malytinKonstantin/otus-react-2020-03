@@ -21,12 +21,14 @@ export const Nav = (props: NavProps) => {
           </li>
         ))}
       </NavList>
-      <User>
-        <UserName>login: {user.login}</UserName>
-        <button type="button" onClick={onLogout}>
-          выйти
-        </button>
-      </User>
+      {user && (
+        <User>
+          <UserName>login: {user.login}</UserName>
+          <button type="button" onClick={onLogout}>
+            выйти
+          </button>
+        </User>
+      )}
     </NavWrapper>
   )
 }
