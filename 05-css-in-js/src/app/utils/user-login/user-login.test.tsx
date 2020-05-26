@@ -2,12 +2,13 @@ import React from 'react'
 import { UserLogin } from './user-login'
 import { mount } from 'enzyme'
 
-const delay = (ms) =>
-  new Promise((resolve, reject) => {
+const delay = (ms) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve()
     }, ms)
   })
+}
 
 describe('<UserLogin />', () => {
   let isAuthorized = false
