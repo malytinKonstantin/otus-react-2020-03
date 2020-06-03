@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import React, { FC } from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { Nav } from '@components/nav'
 import { AuthPage } from '@/pages/auth'
 import { routes } from '@/routes'

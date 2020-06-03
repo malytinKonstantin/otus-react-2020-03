@@ -1,6 +1,7 @@
 import { HomePage } from '@/pages/home'
 import { AboutPage } from '@/pages/about'
 import { ContactsPage } from '@/pages/contacts'
+import { PeoplePageContainer } from '@/pages/people'
 import type { RouteProps } from 'react-router-dom'
 
 interface RouteElement extends RouteProps {
@@ -24,5 +25,10 @@ export const routes: RouteElement[] = [
     path: '/contacts',
     label: 'контакты',
     component: ContactsPage,
+  },
+  {
+    path: '/people',
+    label: 'люди',
+    component: PeoplePageContainer,
   },
 ]
