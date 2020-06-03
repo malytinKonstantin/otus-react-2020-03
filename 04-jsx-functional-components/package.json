@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:loki": "npm run build-storybook && loki --requireReference --reactUri file:./storybook-static",
-    "lint": "eslint '@**/*.{js,ts,tsx}' --quiet --fix --max-warnings 0",
+    "lint": "eslint 'src/*.{js,ts,tsx}' --quiet --fix --max-warnings 0",
     "prettier": "prettier --write .",
     "check": "npm run test && npm run lint && npm run test:loki",
     "loki:update": "npm run build-storybook && loki update --requireReference --reactUri file:./storybook-static",

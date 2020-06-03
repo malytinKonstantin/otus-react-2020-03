@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "test": "jest",
-    "lint": "eslint '@**/*.{js,ts,tsx}' --quiet --fix --max-warnings 0",
+    "lint": "eslint 'src/*.{js,ts,tsx}' --quiet --fix --max-warnings 0",
     "prettier": "prettier --write .",
     "calc": "ts-node src/calc",
     "check": "npm run test && npm run lint"
