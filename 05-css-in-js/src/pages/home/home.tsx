@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { TodoListContainer } from 'components/TodoList'
+import { TodoListContainer } from '@components/TodoList'
 
 const todoList = [
   {

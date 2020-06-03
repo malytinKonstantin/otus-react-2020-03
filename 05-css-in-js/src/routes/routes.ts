@@ -1,6 +1,6 @@
-import { HomePage } from 'pages/home'
-import { AboutPage } from 'pages/about'
-import { ContactsPage } from 'pages/contacts'
+import { HomePage } from '@/pages/home'
+import { AboutPage } from '@/pages/about'
+import { ContactsPage } from '@/pages/contacts'
 import type { RouteProps } from 'react-router-dom'
 
 interface RouteElement extends RouteProps {

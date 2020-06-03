@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix --max-warnings 0",
+    "lint": "eslint '@**/*.{js,ts,tsx}' --quiet --fix --max-warnings 0",
     "prettier": "prettier --write ."
   },
   "repository": {
