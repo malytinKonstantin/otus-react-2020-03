@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
-import { Nav } from 'components/nav'
-import { AuthPage } from 'pages/auth'
+import React, { FC } from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { Nav } from '@components/nav'
+import { AuthPage } from '@/pages/auth'
+import { routes } from '@/routes'
 import { UserLogin } from './utils'
-import { routes } from 'src/app/routes'
 import type { childrenRenderProps } from './utils'
 
 export const App: FC<{}> = () => {

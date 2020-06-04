@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { routes } from 'src/app/routes'
-import { CurrentUser } from 'src/app/utils'
+import { routes } from '@/routes'
+import { CurrentUser } from '@/routes//utils'
 import { NavWrapper, NavList, User, UserName } from './styles'
 
 interface NavProps {
