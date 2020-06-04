@@ -1,13 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
-import type { PeopleItem } from './types'
-
-type InitialState = {
-  isFetching: boolean
-  isFetched: boolean
-  error: string | null
-  data: PeopleItem[]
-}
+import type { InitialState } from './types'
+import { createSlice } from '@reduxjs/toolkit'
+import { fetchPeople } from './thunks'
 
 const initialState: InitialState = {
   isFetching: false,
@@ -16,23 +9,14 @@ const initialState: InitialState = {
   data: [],
 }
 
-export const fetchPeople = createAsyncThunk<PeopleItem[]>(
-  'people/fetch',
-  async () => {
-    const {
-      data: { results },
-    } = await axios.get('https://swapi.dev/api/people')
-    return results
-  },
-)
-
-const people = createSlice({
+export const peopleSlice = createSlice({
   name: 'people',
   initialState,
   reducers: {},
   extraReducers: {
     [fetchPeople.pending.toString()]: (state) => {
       state.isFetching = true
+      state.isFetched = false
       state.error = null
       return state
     },
@@ -51,6 +35,6 @@ const people = createSlice({
   },
 })
 
-export const peaopleActons = people.actions
+export const peaopleActons = peopleSlice.actions
 
-export const peopleReducer = people.reducer
+export const peopleReducer = peopleSlice.reducer

@@ -18,3 +18,10 @@ export type PeopleItem = {
   url: string
   vehicles: string[]
 }
+
+export type InitialState = {
+  isFetching: boolean
+  isFetched: boolean
+  error: string | null
+  data: PeopleItem[]
+}
