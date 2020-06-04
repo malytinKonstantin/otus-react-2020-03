@@ -6,6 +6,7 @@ import {
   getPeopleErorr,
   getPeopleList,
 } from '@/store/ducks/people'
+import { testProbablity } from '@/store/ducks/probablity'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { PeoplePage } from './PeoplePage'
@@ -21,6 +22,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) =>
   bindActionCreators(
     {
       fetchPeople,
+      testProbablity,
     },
     dispatch,
   )

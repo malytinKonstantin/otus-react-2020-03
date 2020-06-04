@@ -1,16 +1,11 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 import { rootReducer } from './ducks'
-
-const defaultMiddlewares = getDefaultMiddleware({
-  immutableCheck: false,
-  serializableCheck: false,
-  thunk: true,
-})
+import { thunk, probablity } from './middlewares'
 
 export const store = configureStore({
   reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production',
-  middleware: [...defaultMiddlewares],
+  middleware: [thunk, probablity],
 })
 
 export type AppState = ReturnType<typeof store.getState>
