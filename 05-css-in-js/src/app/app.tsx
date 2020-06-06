@@ -3,10 +3,13 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { Nav } from '@components/nav'
 import { AuthPage } from '@/pages/auth'
 import { routes } from '@/routes'
-import { UserLogin } from './utils'
-import type { childrenRenderProps } from './utils'
+import type { ConnectProps } from './AppContainer'
 
-export const App: FC<{}> = () => {
+interface AppProps extends ConnectProps {}
+
+export const App: FC<AppProps> = (props) => {
+  const { isAuthorized, isAuthorizing, login, logout, user } = props
+
   const Pages = () => (
     <Switch>
       {routes.map((route) => (
@@ -15,27 +18,19 @@ export const App: FC<{}> = () => {
     </Switch>
   )
 
-  return (
-    <UserLogin>
-      {(renderProps: childrenRenderProps) => {
-        const { isAuthorized, isAuthorizing, login, logout, user } = renderProps
+  if (isAuthorizing) {
+    return <div>loading...</div>
+  }
 
-        if (isAuthorizing) {
-          return <div>loading...</div>
-        }
-
-        return isAuthorized ? (
-          <>
-            <Nav onLogout={logout} user={user} />
-            <Pages />
-          </>
-        ) : (
-          <>
-            <Redirect to="/" />
-            <AuthPage onLogin={login} />
-          </>
-        )
-      }}
-    </UserLogin>
+  return isAuthorized ? (
+    <>
+      <Nav onLogout={logout} user={user} />
+      <Pages />
+    </>
+  ) : (
+    <>
+      <Redirect to="/" />
+      <AuthPage onLogin={login} />
+    </>
   )
 }
