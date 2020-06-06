@@ -1,12 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { App } from './app'
+import { Provider as ReduxProvider } from 'react-redux'
+import { AppContainer } from './app'
+import { store } from '@/store'
 
 const wrapper = (
-  <Router>
-    <App />
-  </Router>
+  <ReduxProvider store={store}>
+    <Router>
+      <AppContainer />
+    </Router>
+  </ReduxProvider>
 )
 
 render(wrapper, document.getElementById('root'))

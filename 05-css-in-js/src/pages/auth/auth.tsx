@@ -1,9 +1,10 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { Formik, Form, Field } from 'formik'
 import { Row, Wrapper, Label, Input } from './styles'
+import type { User } from '@/store/ducks/user'
 
 interface AuthPageProps {
-  onLogin: Function
+  onLogin(args: { user: User }): void
 }
 
 export const AuthPage: FC<AuthPageProps> = ({ onLogin }) => {
@@ -13,7 +14,7 @@ export const AuthPage: FC<AuthPageProps> = ({ onLogin }) => {
   }
 
   const handleSubmit = (values: typeof initialValues, form: any) => {
-    onLogin(values)
+    onLogin({ user: values })
     form.resetForm()
   }
 
